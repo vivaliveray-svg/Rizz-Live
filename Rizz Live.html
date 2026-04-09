@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rizz Live Hiring - Animated Glass UI</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  background: radial-gradient(circle at 20% 20%, #3a0ca3, #0b0220 70%);
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* FLOATING GLOW */
+body::before{
+  content:"";
+  position:fixed;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle,#ff4ecb55,transparent);
+  top:-100px;
+  left:-100px;
+  animation: floatGlow 8s infinite alternate;
+}
+
+@keyframes floatGlow{
+  0%{transform:translate(0,0)}
+  100%{transform:translate(200px,200px)}
+}
+
+.container{max-width:1200px;margin:auto;padding:40px 20px}
+
+.header{display:flex;align-items:center;gap:15px}
+.logo img{width:60px;height:60px;border-radius:50%}
+.title{font-size:28px;font-weight:800}
+.subtitle{font-size:12px;opacity:.8}
+
+/* GLASS */
+.glass{
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(30px);
+  border-radius:25px;
+  border:1px solid rgba(255,255,255,0.2);
+  box-shadow:0 0 40px rgba(255,0,200,.25);
+  transition:.4s;
+}
+.glass:hover{
+  transform:translateY(-5px) scale(1.02);
+  box-shadow:0 0 60px rgba(255,0,200,.4);
+}
+
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;margin-top:40px}
+.left{padding:30px}
+
+.tag{
+  display:inline-block;
+  padding:6px 15px;
+  border-radius:20px;
+  background:linear-gradient(90deg,#ff4ecb,#7b5cff);
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 rgba(255,0,200,0.4)}
+  100%{box-shadow:0 0 20px rgba(255,0,200,0.8)}
+}
+
+.hiring{
+  font-size:60px;
+  font-weight:800;
+  margin:10px 0;
+  background:linear-gradient(90deg,#ff6ec4,#7873f5);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation: glowText 2s infinite alternate;
+}
+
+@keyframes glowText{
+  from{text-shadow:0 0 10px #ff4ecb}
+  to{text-shadow:0 0 25px #7b5cff}
+}
+
+.desc{opacity:.85;margin-bottom:20px;line-height:1.6}
+
+.positions li{list-style:none;margin:8px 0}
+
+.btn{
+  border:2px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px);$1
+  position:relative;
+  overflow:hidden;
+}
+.btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
+  transition:0.5s;
+}
+.btn:hover::before{
+  left:100%;
+}
+.btn:hover{
+  transform:scale(1.12) rotate(-1deg);
+  box-shadow:0 0 30px #ff4ecb,0 0 60px #7b5cff;
+}
+.btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px #ff4ecb;
+}
+
+.right{display:flex;flex-direction:column;gap:20px}
+
+.flag{
+  height:150px;
+  border-radius:20px;
+  overflow:hidden;
+  animation:floatCard 4s ease-in-out infinite;
+}
+
+.flag:nth-child(2){animation-delay:1s}
+.flag:nth-child(3){animation-delay:2s}
+
+@keyframes floatCard{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+.flag img{width:100%;height:100%;object-fit:cover}
+
+.footer{margin-top:40px;display:flex;justify-content:space-between;align-items:center}
+.contact{font-size:14px}
+
+.mascot{
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-15px)}
+}
+
+.mascot img{width:130px}
+
+
+
+/* POLICY BUTTONS */
+.policy-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:20px;
+}
+
+.policy-btn{
+  display:block;
+  text-align:center;
+  padding:10px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,0.3);
+  background:rgba(255,255,255,0.05);
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  transition:0.3s;
+  backdrop-filter:blur(10px);
+}
+
+.policy-btn:hover{
+  background:linear-gradient(90deg,#ff4ecb,#7b5cff);
+  transform:scale(1.05);
+  box-shadow:0 0 15px #ff4ecb;
+}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div class="logo">
+      <img src="logo.png" alt="logo">
+    </div>
+    <div>
+      <div class="title">RIZZ LIVE</div>
+      <div class="subtitle">INDIA, BANGLADESH, NEPAL, USA, NIGRIA, LATIN AMERICA</div>
+    </div>
+  </div>
+
+  <div class="hero">
+
+    <div class="glass left">
+      <div class="tag">We’re</div>
+      <div class="hiring">HIRING!</div>
+
+      <div class="desc">
+        Ready to make an impact? We're looking for talented and passionate individuals to join our team.
+      </div>
+
+      <ul class="positions">
+        <li>✔ Super admin/Admin</li>
+        <li>✔ Agency/Agent</li>
+        <li>✔ Coin Seller</li>
+        <li>✔ Business partner</li>
+      </ul>
+
+      <!-- POLICY BUTTONS -->
+      <div class="policy-grid">
+        <a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/MCoHw2omBiOEOjkCzD6jSgC0pJd" target="_blank" class="policy-btn">AGENCY POLICY</a>
+        <a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/LAqjwlaUnigRWpkLaRMjYNxupTf" target="_blank" class="policy-btn">HOST POLICY</a>
+        <a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/U9kcwpf6hikFvTk5KeDjQoAfpFe" target="_blank" class="policy-btn">STAR HOST POLICY</a>
+        <a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/KJVqw9sbViB4yHkj3S6jYCTBpWb" target="_blank" class="policy-btn">COIN SELLER POLICY</a>
+        <a href="https://xjpumno595ok.jp.larksuite.com/wiki/WFDewYUQniEEshkRui3jBvYMpUb" target="_blank" class="policy-btn">BDM/ADMIN POLICY</a>
+      </div>
+
+      <a href="mailto:hr.vivalive@proton.me?subject=Job%20Application%20-%20Rizz%20Live&body=Hello%20Rizz%20Live%20Team,%0A%0AI%20want%20to%20apply%20for%20the%20position.%0A%0AName:%20%0APosition:%20%0A%0AThanks" class="btn">APPLY NOW</a>
+      <div style="margin-top:10px">Send CV: hr.vivalive@proton.me</div>
+    </div>
+
+    <div class="right">
+      <div class="glass flag"><img src="usa.png"></div>
+      <div class="glass flag"><img src="india.png"></div>
+      <div class="glass flag"><img src="bangladesh.png"></div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <a class="btn">MORE INFO</a>
+    <div class="contact">Contact: +91 9286766608</div>
+  </div>
+
+</div>
+
+<div class="mascot">
+  <img src="mascot.png">
+</div>
+
+</body>
+</html>
