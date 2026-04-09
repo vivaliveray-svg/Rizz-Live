@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rizz Live Hiring</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#050014;
+  color:#fff;
+  transition:.4s;
+}
+
+/* ☀️ LIGHT MODE FIX */
+body.light{
+  background:#f5f5ff;
+  color:#111;
+}
+body.light .title,
+body.light .hiring,
+body.light .positions li,
+body.light .footer{
+  color:#111;
+  -webkit-text-fill-color:unset;
+}
+
+/* BG */
+body::before{
+  content:"";
+  position:fixed;
+  width:300%;
+  height:300%;
+  background:linear-gradient(45deg,#ff00cc,#3333ff,#00ffe1,#ff00cc);
+  animation:bgMove 10s linear infinite;
+  z-index:-1;
+  opacity:.15;
+}
+@keyframes bgMove{
+  0%{transform:translate(0,0)}
+  100%{transform:translate(-50%,-50%)}
+}
+
+.container{max-width:1100px;margin:auto;padding:30px}
+
+/* HEADER */
+.header{display:flex;justify-content:space-between;align-items:center}
+.leftHead{display:flex;align-items:center;gap:15px}
+.logo img{width:55px;border-radius:50%}
+
+.title{
+  font-size:26px;
+  font-weight:800;
+  background:linear-gradient(90deg,#ff4ecb,#7b5cff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.subtitle{font-size:11px;opacity:.7}
+
+.toggle{
+  cursor:pointer;
+  padding:8px 14px;
+  border-radius:20px;
+  background:linear-gradient(90deg,#ff4ecb,#7b5cff);
+}
+
+/* GLASS */
+.glass{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(25px);
+  border-radius:20px;
+  padding:25px;
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:25px;
+  margin-top:30px;
+}
+
+/* 🐱 MASCOT */
+.mascot{
+  position:absolute;
+  top:-25px;
+  right:10px;
+}
+.mascot img{
+  width:70px;
+  animation:blink 4s infinite;
+  transform-origin:center;
+}
+
+/* 👀 BLINK */
+@keyframes blink{
+  0%,92%,100%{transform:scaleY(1)}
+  95%{transform:scaleY(0.1)}
+}
+
+/* TEXT */
+.tag{
+  display:inline-block;
+  padding:5px 12px;
+  border-radius:20px;
+  background:linear-gradient(90deg,#ff4ecb,#7b5cff);
+}
+
+.hiring{
+  font-size:60px;
+  font-weight:800;
+  margin:10px 0;
+  background:linear-gradient(90deg,#fff,#ff9ae6,#a18cff,#fff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* LIST */
+.positions li{list-style:none;margin:6px 0}
+
+/* BUTTONS */
+.policy-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:15px;
+}
+
+/* BASE */
+.policy-btn,.btn{
+  text-decoration:none;
+  color:#fff;
+  text-align:center;
+  padding:10px;
+  border-radius:25px;
+  background:linear-gradient(135deg,#ff4ecb,#7b5cff);
+  box-shadow:0 0 15px #ff4ecb;
+  transition:.3s;
+}
+
+/* 🌙 DARK → LIGHT HOVER */
+body:not(.light) .policy-btn:hover,
+body:not(.light) .btn:hover{
+  background:#fff;
+  color:#000;
+  transform:scale(1.05);
+  box-shadow:0 0 25px #fff;
+}
+
+/* ☀️ LIGHT → DARK HOVER */
+body.light .policy-btn:hover,
+body.light .btn:hover{
+  background:#000;
+  color:#fff;
+  transform:scale(1.05);
+  box-shadow:0 0 25px #000;
+}
+
+/* SPECIAL */
+.special{
+  background:linear-gradient(135deg,#00c6ff,#0072ff);
+}
+body:not(.light) .special:hover{
+  background:#fff;
+  color:#0072ff;
+}
+body.light .special:hover{
+  background:#000;
+  color:#00c6ff;
+}
+
+/* APPLY */
+.btn{
+  display:inline-block;
+  margin-top:30px;
+}
+
+/* FLAGS */
+.right{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+}
+.flag{
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  overflow:hidden;
+}
+.flag img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* FOOTER */
+.footer{
+  margin-top:30px;
+  text-align:center;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .mascot{position:static;text-align:center;margin-bottom:10px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+  <div class="leftHead">
+    <div class="logo"><img src="logo.png"></div>
+    <div>
+      <div class="title">RIZZ LIVE</div>
+      <div class="subtitle">INDIA, BANGLADESH, USA, NIGERIA, LATIN AMERICA</div>
+    </div>
+  </div>
+
+  <div class="toggle" onclick="document.body.classList.toggle('light')">
+    🌙/☀️
+  </div>
+</div>
+
+<div class="hero">
+
+<div class="glass" style="position:relative;">
+
+  <div class="mascot">
+    <img src="mascot.png" id="cat">
+  </div>
+
+  <div class="tag">We’re</div>
+  <div class="hiring">HIRING</div>
+
+  <ul class="positions">
+    <li>✔ BDM/ADMIN</li>
+    <li>✔ Agency</li>
+    <li>✔ Coin Seller</li>
+    <li>✔ Business Partner</li>
+  </ul>
+
+  <div class="policy-grid">
+    <a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/MCoHw2omBiOEOjkCzD6jSgC0pJd" class="policy-btn">Agency Policy</a>
+    <a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/LAqjwlaUnigRWpkLaRMjYNxupTf" class="policy-btn">Host Policy</a>
+    <a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/U9kcwpf6hikFvTk5KeDjQoAfpFe" class="policy-btn">Star Host Policy</a>
+    <a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/KJVqw9sbViB4yHkj3S6jYCTBpWb" class="policy-btn">Seller Policy</a>
+
+    <a href="https://xjpumno595ok.jp.larksuite.com/share/base/form/shrjppqqLKpgmUaHsmQc5JWA8Ge" class="policy-btn special">Agency Registration</a>
+  </div>
+
+  <a href="mailto:hr.vivalive@proton.me" class="btn">APPLY NOW</a>
+
+</div>
+
+<div class="right">
+  <div class="glass flag"><img src="usa.png"></div>
+  <div class="glass flag"><img src="india.png"></div>
+  <div class="glass flag"><img src="bangladesh.png"></div>
+</div>
+
+</div>
+
+<div class="footer">
+  More information: +91 9286766608
+</div>
+
+</div>
+
+<script>
+// 🐱 Eyes follow cursor
+const cat = document.getElementById('cat');
+document.addEventListener('mousemove', (e)=>{
+  let x = (window.innerWidth/2 - e.pageX)/40;
+  let y = (window.innerHeight/2 - e.pageY)/40;
+  cat.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+// 🔊 Sound + 📳 Vibration
+document.querySelectorAll('a').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    let audio = new Audio("https://www.soundjay.com/buttons/sounds/button-16.mp3");
+    audio.play();
+    if(navigator.vibrate){
+      navigator.vibrate(50);
+    }
+  });
+});
+</script>
+
+</body>
+</html>
