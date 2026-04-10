@@ -38,7 +38,7 @@ body::before{
   width:300%;
   height:300%;
   background:linear-gradient(45deg,#ff00cc,#3333ff,#00ffe1,#ff00cc);
-  animation:bgMove 10s linear infinite;
+  animation:bgMove 12s linear infinite;
   z-index:-1;
   opacity:.15;
 }
@@ -106,15 +106,15 @@ body::before{
   margin-top:30px;
 }
 
-/* MASCOT */
+/* MASCOT FIX */
 .mascot{
   position:absolute;
-  top:-25px;
+  top:-5px; /* FIXED */
   right:10px;
 }
 .mascot img{
   width:70px;
-  animation:none; /* FIXED */
+  animation:none;
 }
 
 /* TEXT */
@@ -144,13 +144,13 @@ body::before{
   margin-top:15px;
 }
 
-/* BUTTON SMALL FIX */
+/* BUTTON */
 .policy-btn{
   text-decoration:none;
   color:#fff;
   text-align:center;
-  padding:8px; /* FIXED */
-  font-size:13px; /* FIXED */
+  padding:8px;
+  font-size:13px;
   border-radius:25px;
   background:linear-gradient(135deg,#ff4ecb,#7b5cff);
   box-shadow:0 6px 0 rgba(0,0,0,0.4),0 0 15px #ff4ecb;
@@ -245,6 +245,24 @@ body.light .policy-btn:hover{
   line-height:1.6;
 }
 
+/* 📱 MOBILE OPTIMIZATION */
+@media(max-width:768px){
+  body::before{
+    animation:none;
+    opacity:.08;
+  }
+
+  .glass{
+    backdrop-filter:none;
+    background:rgba(255,255,255,0.08);
+    animation:none;
+  }
+
+  .glass::before{
+    display:none;
+  }
+}
+
 </style>
 </head>
 
@@ -311,11 +329,14 @@ body.light .policy-btn:hover{
 
 <script>
 const cat=document.getElementById('cat');
+
+if(window.innerWidth > 768){
 document.addEventListener('mousemove',(e)=>{
 let x=(window.innerWidth/2-e.pageX)/40;
 let y=(window.innerHeight/2-e.pageY)/40;
 cat.style.transform=`translate(${x}px,${y}px)`;
 });
+}
 </script>
 
 </body>
