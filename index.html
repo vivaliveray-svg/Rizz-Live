@@ -10,13 +10,13 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body{
   font-family:'Poppins',sans-serif;
   background:#050014;
   color:#fff;
+  transition:.4s;
 }
 
 /* LIGHT MODE */
@@ -81,6 +81,7 @@ body::before{
   animation:glassFloat 6s ease-in-out infinite;
 }
 @keyframes glassFloat{
+  0%,100%{transform:translateY(0)}
   50%{transform:translateY(-6px)}
 }
 
@@ -88,6 +89,7 @@ body::before{
 .glass::before{
   content:"";
   position:absolute;
+  top:0;
   left:-100%;
   width:50%;
   height:100%;
@@ -98,24 +100,26 @@ body::before{
   100%{left:120%}
 }
 
-.hero{display:flex;justify-content:center;margin-top:30px}
+.hero{
+  display:flex;
+  justify-content:center;
+  margin-top:30px;
+}
 
-/* 🐱 MASCOT FIX */
+/* MASCOT */
 .mascot{
   position:absolute;
-  top:10px;
+  top:-25px;
   right:10px;
 }
 .mascot img{
   width:70px;
-  animation:blink 4s infinite;
-}
-@keyframes blink{
-  95%{transform:scaleY(0.1)}
+  animation:none; /* FIXED */
 }
 
 /* TEXT */
 .tag{
+  display:inline-block;
   padding:5px 12px;
   border-radius:20px;
   background:linear-gradient(90deg,#ff4ecb,#7b5cff);
@@ -129,6 +133,7 @@ body::before{
   -webkit-text-fill-color:transparent;
 }
 
+/* LIST */
 .positions li{list-style:none;margin:6px 0}
 
 /* BUTTON GRID */
@@ -139,21 +144,27 @@ body::before{
   margin-top:15px;
 }
 
-/* BUTTON */
+/* BUTTON SMALL FIX */
 .policy-btn{
   text-decoration:none;
   color:#fff;
   text-align:center;
-  padding:12px;
+  padding:8px; /* FIXED */
+  font-size:13px; /* FIXED */
   border-radius:25px;
   background:linear-gradient(135deg,#ff4ecb,#7b5cff);
   box-shadow:0 6px 0 rgba(0,0,0,0.4),0 0 15px #ff4ecb;
   transition:.3s;
 }
 
-.policy-btn:active{
-  transform:translateY(5px);
-  box-shadow:0 2px 0 rgba(0,0,0,0.5);
+/* HOVER */
+body:not(.light) .policy-btn:hover{
+  background:#fff;
+  color:#000;
+}
+body.light .policy-btn:hover{
+  background:#000;
+  color:#fff;
 }
 
 .special{
@@ -172,25 +183,23 @@ body::before{
   width:65px;
   height:65px;
   border-radius:50%;
-  position:relative;
   overflow:hidden;
-  transition:.4s;
-}
-
-.flag:hover{
-  transform:rotate(8deg) scale(1.1);
-  box-shadow:0 0 20px #fff;
+  position:relative;
 }
 
 /* INDIA */
-.india{background:linear-gradient(#ff9933 33%,#fff 33% 66%,#138808 66%)}
+.india{
+  background:linear-gradient(#ff9933 33%, #fff 33% 66%, #138808 66%);
+}
 .india::after{
   content:"";
   position:absolute;
-  width:14px;height:14px;
+  top:50%;
+  left:50%;
+  width:14px;
+  height:14px;
   border:2px solid #000080;
   border-radius:50%;
-  top:50%;left:50%;
   transform:translate(-50%,-50%);
 }
 
@@ -201,38 +210,39 @@ body::before{
 .usa::before{
   content:"";
   position:absolute;
-  width:50%;height:50%;
+  width:50%;
+  height:50%;
   background:#3c3b6e;
 }
 
 /* BANGLADESH */
-.bangladesh{background:#006a4e}
+.bangladesh{
+  background:#006a4e;
+}
 .bangladesh::after{
   content:"";
   position:absolute;
-  width:22px;height:22px;
+  top:50%;
+  left:45%;
+  width:22px;
+  height:22px;
   background:#f42a41;
   border-radius:50%;
-  top:50%;left:45%;
   transform:translate(-50%,-50%);
 }
 
 /* FOOTER */
-.footer{text-align:center;margin-top:30px}
-
+.footer{
+  margin-top:30px;
+  text-align:center;
+}
 .footer-box{
   display:inline-block;
-  padding:15px 30px;
+  padding:12px 25px;
   border-radius:30px;
-  background:linear-gradient(90deg,#ff4ecb,#7b5cff);
-  box-shadow:0 0 20px #ff4ecb;
-  line-height:1.8;
-  font-weight:600;
-}
-
-.whatsapp{
-  color:#25D366;
-  margin-right:8px;
+  background:linear-gradient(90deg,#25D366,#128C7E);
+  box-shadow:0 0 15px #25D366;
+  line-height:1.6;
 }
 
 </style>
@@ -292,15 +302,14 @@ body::before{
 
 <div class="footer">
 <div class="footer-box">
-<span class="whatsapp">💬</span> +91 9286766608 <br>
-<span class="whatsapp">💬</span> +1 (825) 782-8116
+💬 WhatsApp: +91 9286766608 <br>
+💬 WhatsApp: +1 (825) 782-8116
 </div>
 </div>
 
 </div>
 
 <script>
-// MASCOT MOVE
 const cat=document.getElementById('cat');
 document.addEventListener('mousemove',(e)=>{
 let x=(window.innerWidth/2-e.pageX)/40;
