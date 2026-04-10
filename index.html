@@ -85,7 +85,7 @@ body::before{
   margin-top:30px;
 }
 
-/* MASCOT FIX */
+/* MASCOT */
 .mascot{
   position:absolute;
   top:-5px;
@@ -159,16 +159,15 @@ body.light .policy-btn:hover{
   position:relative;
 }
 
-/* 🇮🇳 INDIA */
+/* INDIA */
 .india{
   background:linear-gradient(#ff9933 33%, #fff 33% 66%, #138808 66%);
   display:flex;
   align-items:center;
   justify-content:center;
 }
-.india svg{width:26px;height:26px}
 
-/* 🇺🇸 USA */
+/* USA */
 .usa{
   background:repeating-linear-gradient(to bottom,#b22234 0 5px,#fff 5px 10px);
 }
@@ -180,7 +179,7 @@ body.light .policy-btn:hover{
   background:#3c3b6e;
 }
 
-/* 🇧🇩 BANGLADESH */
+/* BANGLADESH */
 .bangladesh{
   background:#006a4e;
 }
@@ -203,11 +202,29 @@ body.light .policy-btn:hover{
 }
 .footer-box{
   display:inline-block;
-  padding:12px 25px;
+  padding:15px 28px;
   border-radius:30px;
   background:linear-gradient(90deg,#25D366,#128C7E);
-  box-shadow:0 0 15px #25D366;
-  line-height:1.6;
+  box-shadow:0 0 20px #25D366;
+  line-height:1.8;
+}
+
+/* 🔥 OFFICIAL BUTTON */
+.rizz-btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 25px;
+  border-radius:25px;
+  text-decoration:none;
+  color:#fff;
+  background:linear-gradient(135deg,#ff00cc,#3333ff);
+  box-shadow:0 0 15px rgba(255,0,200,.6);
+  transition:.3s;
+}
+
+.rizz-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px #ff00cc;
 }
 
 /* MOBILE FIX */
@@ -252,38 +269,15 @@ body.light .policy-btn:hover{
 </ul>
 
 <div class="policy-grid">
-<a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/MCoHw2omBiOEOjkCzD6jSgC0pJd" class="policy-btn">Agency Policy</a>
-<a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/LAqjwlaUnigRWpkLaRMjYNxupTf" class="policy-btn">Host Policy</a>
-<a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/U9kcwpf6hikFvTk5KeDjQoAfpFe" class="policy-btn">Star Host Policy</a>
-<a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/KJVqw9sbViB4yHkj3S6jYCTBpWb" class="policy-btn">Seller Policy</a>
-<a href="https://xjpumno595ok.jp.larksuite.com/share/base/form/shrjppqqLKpgmUaHsmQc5JWA8Ge" class="policy-btn special">Agency Registration</a>
+<a href="#" class="policy-btn">Agency Policy</a>
+<a href="#" class="policy-btn">Host Policy</a>
+<a href="#" class="policy-btn">Star Host Policy</a>
+<a href="#" class="policy-btn">Seller Policy</a>
+<a href="#" class="policy-btn special">Agency Registration</a>
 </div>
 
 <div class="flags">
-<div class="flag india">
-<svg viewBox="0 0 100 100">
-<circle cx="50" cy="50" r="45" stroke="#000080" stroke-width="3" fill="none"/>
-<g stroke="#000080" stroke-width="2">
-<line x1="50" y1="50" x2="50" y2="5"/>
-<line x1="50" y1="50" x2="50" y2="95"/>
-<line x1="50" y1="50" x2="5" y2="50"/>
-<line x1="50" y1="50" x2="95" y2="50"/>
-<line x1="50" y1="50" x2="20" y2="20"/>
-<line x1="50" y1="50" x2="80" y2="80"/>
-<line x1="50" y1="50" x2="80" y2="20"/>
-<line x1="50" y1="50" x2="20" y2="80"/>
-<line x1="50" y1="50" x2="70" y2="10"/>
-<line x1="50" y1="50" x2="30" y2="10"/>
-<line x1="50" y1="50" x2="90" y2="30"/>
-<line x1="50" y1="50" x2="10" y2="30"/>
-<line x1="50" y1="50" x2="90" y2="70"/>
-<line x1="50" y1="50" x2="10" y2="70"/>
-<line x1="50" y1="50" x2="70" y2="90"/>
-<line x1="50" y1="50" x2="30" y2="90"/>
-</g>
-</svg>
-</div>
-
+<div class="flag india"></div>
 <div class="flag usa"></div>
 <div class="flag bangladesh"></div>
 </div>
@@ -294,6 +288,11 @@ body.light .policy-btn:hover{
 <div class="footer">
 <div class="footer-box">
 💬 RIZZ LIVE OFFICIAL<br>
+
+<a href="official.html" class="rizz-btn">
+🚀 VIEW OFFICIAL LIST
+</a>
+
 </div>
 </div>
 
@@ -302,65 +301,12 @@ body.light .policy-btn:hover{
 <script>
 const cat=document.getElementById('cat');
 
-if(window.innerWidth > 768){
+if(cat && window.innerWidth > 768){
 document.addEventListener('mousemove',(e)=>{
 let x=(window.innerWidth/2-e.pageX)/40;
 let y=(window.innerHeight/2-e.pageY)/40;
 cat.style.transform = `translate(${x}px,${y}px)`;
 });
-}
-
-function openRizz(){
-  window.location = "vivamylife://user/1002";
-
-  setTimeout(function(){
- window.location = "https://p.vivamylife.com/page/app.html?type=room&cno=1002&code=AAHSIE";
-  }, 1200);
-}
-</script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rizz Live Officials</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-<style>
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#050014;
-  color:#fff;
-}
-
-.card{
-  margin:15px;
-  padding:20px;
-  border-radius:20px;
-  background:rgba(255,255,255,0.05);
-  box-shadow:0 0 20px #ff00cc;
-  cursor:pointer;
-}
-
-.card:hover{
-  transform:scale(1.05);
-}
-</style>
-</head>
-
-<body>
-
-<div class="card" onclick="openProfile(1002)">Ray-IN - 1002</div>
-<div class="card" onclick="openProfile(2346)">Test 2 - 2346</div>
-<div class="card" onclick="openProfile(2347)">Test 3 - 2347</div>
-<div class="card" onclick="openProfile(2348)">Test 4 - 2348</div>
-<div class="card" onclick="openProfile(2349)">Test 5 - 2349</div>
-
 }
 </script>
 
