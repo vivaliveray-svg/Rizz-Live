@@ -8,9 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;
-  -webkit-font-smoothing: antialiased;
-}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing: antialiased;}
 
 body{
   font-family:'Poppins',sans-serif;
@@ -78,44 +76,22 @@ body::before{
   padding:25px;
   position:relative;
   overflow:hidden;
-  animation:glassFloat 6s ease-in-out infinite;
-}
-@keyframes glassFloat{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-6px)}
 }
 
-/* SHINE */
-.glass::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:50%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
-  animation:shine 4s infinite;
-}
-@keyframes shine{
-  100%{left:120%}
-}
-
+/* HERO */
 .hero{
   display:flex;
   justify-content:center;
   margin-top:30px;
 }
 
-/* MASCOT FIX */
+/* MASCOT */
 .mascot{
   position:absolute;
-  top:-5px; /* FIXED */
+  top:-5px;
   right:10px;
 }
-.mascot img{
-  width:70px;
-  animation:none;
-}
+.mascot img{width:70px}
 
 /* TEXT */
 .tag{
@@ -133,10 +109,9 @@ body::before{
   -webkit-text-fill-color:transparent;
 }
 
-/* LIST */
 .positions li{list-style:none;margin:6px 0}
 
-/* BUTTON GRID */
+/* BUTTONS */
 .policy-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -144,7 +119,6 @@ body::before{
   margin-top:15px;
 }
 
-/* BUTTON */
 .policy-btn{
   text-decoration:none;
   color:#fff;
@@ -153,11 +127,9 @@ body::before{
   font-size:13px;
   border-radius:25px;
   background:linear-gradient(135deg,#ff4ecb,#7b5cff);
-  box-shadow:0 6px 0 rgba(0,0,0,0.4),0 0 15px #ff4ecb;
   transition:.3s;
 }
 
-/* HOVER */
 body:not(.light) .policy-btn:hover{
   background:#fff;
   color:#000;
@@ -187,23 +159,19 @@ body.light .policy-btn:hover{
   position:relative;
 }
 
-/* INDIA */
+/* 🇮🇳 INDIA FLAG */
 .india{
   background:linear-gradient(#ff9933 33%, #fff 33% 66%, #138808 66%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-.india::after{
-  content:"";
-  position:absolute;
-  top:50%;
-  left:50%;
-  width:14px;
-  height:14px;
-  border:2px solid #000080;
-  border-radius:50%;
-  transform:translate(-50%,-50%);
+.india svg{
+  width:26px;
+  height:26px;
 }
 
-/* USA */
+/* 🇺🇸 USA */
 .usa{
   background:repeating-linear-gradient(to bottom,#b22234 0 5px,#fff 5px 10px);
 }
@@ -215,7 +183,7 @@ body.light .policy-btn:hover{
   background:#3c3b6e;
 }
 
-/* BANGLADESH */
+/* 🇧🇩 BANGLADESH */
 .bangladesh{
   background:#006a4e;
 }
@@ -245,22 +213,10 @@ body.light .policy-btn:hover{
   line-height:1.6;
 }
 
-/* 📱 MOBILE OPTIMIZATION */
+/* MOBILE FIX */
 @media(max-width:768px){
-  body::before{
-    animation:none;
-    opacity:.08;
-  }
-
-  .glass{
-    backdrop-filter:none;
-    background:rgba(255,255,255,0.08);
-    animation:none;
-  }
-
-  .glass::before{
-    display:none;
-  }
+  body::before{animation:none;opacity:.08;}
+  .glass{backdrop-filter:none;background:rgba(255,255,255,0.08);}
 }
 
 </style>
@@ -283,7 +239,6 @@ body.light .policy-btn:hover{
 </div>
 
 <div class="hero">
-
 <div class="glass" style="max-width:600px;width:100%;">
 
 <div class="mascot">
@@ -296,27 +251,43 @@ body.light .policy-btn:hover{
 <ul class="positions">
 <li>✔ BDM/ADMIN</li>
 <li>✔ Agency</li>
-<li>✔ HOST</li>
 <li>✔ Coin Seller</li>
 <li>✔ Business Partner</li>
 </ul>
 
 <div class="policy-grid">
-<a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/MCoHw2omBiOEOjkCzD6jSgC0pJd" class="policy-btn">Agency Policy</a>
-<a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/LAqjwlaUnigRWpkLaRMjYNxupTf" class="policy-btn">Host Policy</a>
-<a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/U9kcwpf6hikFvTk5KeDjQoAfpFe" class="policy-btn">Star Host Policy</a>
-<a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/KJVqw9sbViB4yHkj3S6jYCTBpWb" class="policy-btn">Seller Policy</a>
-<a href="https://xjpumno595ok.jp.larksuite.com/share/base/form/shrjppqqLKpgmUaHsmQc5JWA8Ge" class="policy-btn special">Agency Registration</a>
+<a href="#" class="policy-btn">Agency Policy</a>
+<a href="#" class="policy-btn">Host Policy</a>
+<a href="#" class="policy-btn">Star Host Policy</a>
+<a href="#" class="policy-btn">Seller Policy</a>
+<a href="#" class="policy-btn special">Agency Registration</a>
 </div>
 
 <div class="flags">
-<div class="flag india"></div>
+
+<div class="flag india">
+<svg viewBox="0 0 100 100">
+<circle cx="50" cy="50" r="45" stroke="#000080" stroke-width="3" fill="none"/>
+<g stroke="#000080" stroke-width="2">
+<!-- 24 spokes -->
+<script type="application/ecmascript"><![CDATA[
+for(let i=0;i<24;i++){
+let angle=i*(360/24);
+let x=Math.cos(angle*Math.PI/180)*45+50;
+let y=Math.sin(angle*Math.PI/180)*45+50;
+document.write(`<line x1="50" y1="50" x2="${x}" y2="${y}"/>`);
+}
+]]></script>
+</g>
+</svg>
+</div>
+
 <div class="flag usa"></div>
 <div class="flag bangladesh"></div>
-</div>
 
 </div>
 
+</div>
 </div>
 
 <div class="footer">
