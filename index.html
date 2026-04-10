@@ -17,7 +17,6 @@ body{
   font-family:'Poppins',sans-serif;
   background:#050014;
   color:#fff;
-  transition:.4s;
 }
 
 /* LIGHT MODE */
@@ -44,7 +43,6 @@ body::before{
   opacity:.15;
 }
 @keyframes bgMove{
-  0%{transform:translate(0,0)}
   100%{transform:translate(-50%,-50%)}
 }
 
@@ -83,15 +81,13 @@ body::before{
   animation:glassFloat 6s ease-in-out infinite;
 }
 @keyframes glassFloat{
-  0%,100%{transform:translateY(0)}
   50%{transform:translateY(-6px)}
 }
 
-/* GLASS SHINE */
+/* SHINE */
 .glass::before{
   content:"";
   position:absolute;
-  top:0;
   left:-100%;
   width:50%;
   height:100%;
@@ -102,16 +98,12 @@ body::before{
   100%{left:120%}
 }
 
-.hero{
-  display:flex;
-  justify-content:center;
-  margin-top:30px;
-}
+.hero{display:flex;justify-content:center;margin-top:30px}
 
-/* MASCOT */
+/* 🐱 MASCOT FIX */
 .mascot{
   position:absolute;
-  top:-25px;
+  top:10px;
   right:10px;
 }
 .mascot img{
@@ -119,13 +111,11 @@ body::before{
   animation:blink 4s infinite;
 }
 @keyframes blink{
-  0%,92%,100%{transform:scaleY(1)}
   95%{transform:scaleY(0.1)}
 }
 
 /* TEXT */
 .tag{
-  display:inline-block;
   padding:5px 12px;
   border-radius:20px;
   background:linear-gradient(90deg,#ff4ecb,#7b5cff);
@@ -133,14 +123,12 @@ body::before{
 
 .hiring{
   font-size:60px;
-  font-weight:800;
   margin:10px 0;
   background:linear-gradient(90deg,#fff,#ff9ae6,#a18cff,#fff);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
-/* LIST */
 .positions li{list-style:none;margin:6px 0}
 
 /* BUTTON GRID */
@@ -152,7 +140,7 @@ body::before{
 }
 
 /* BUTTON */
-.policy-btn,.btn{
+.policy-btn{
   text-decoration:none;
   color:#fff;
   text-align:center;
@@ -160,24 +148,10 @@ body::before{
   border-radius:25px;
   background:linear-gradient(135deg,#ff4ecb,#7b5cff);
   box-shadow:0 6px 0 rgba(0,0,0,0.4),0 0 15px #ff4ecb;
-  transition:all .4s cubic-bezier(0.22,1,0.36,1);
+  transition:.3s;
 }
 
-/* HOVER SWITCH */
-body:not(.light) .policy-btn:hover,
-body:not(.light) .btn:hover{
-  background:#fff;
-  color:#000;
-  transform:translateY(-2px) scale(1.02);
-}
-body.light .policy-btn:hover,
-body.light .btn:hover{
-  background:#000;
-  color:#fff;
-}
-
-/* 3D CLICK */
-.policy-btn:active,.btn:active{
+.policy-btn:active{
   transform:translateY(5px);
   box-shadow:0 2px 0 rgba(0,0,0,0.5);
 }
@@ -198,45 +172,25 @@ body.light .btn:hover{
   width:65px;
   height:65px;
   border-radius:50%;
-  overflow:hidden;
   position:relative;
+  overflow:hidden;
   transition:.4s;
 }
 
-/* FLAG HOVER */
-.flag::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
-}
 .flag:hover{
   transform:rotate(8deg) scale(1.1);
   box-shadow:0 0 20px #fff;
 }
-.flag:hover::before{
-  animation:flagShine .6s forwards;
-}
-@keyframes flagShine{
-  to{left:120%}
-}
 
 /* INDIA */
-.india{
-  background:linear-gradient(#ff9933 33%, #fff 33% 66%, #138808 66%);
-}
+.india{background:linear-gradient(#ff9933 33%,#fff 33% 66%,#138808 66%)}
 .india::after{
   content:"";
   position:absolute;
-  top:50%;
-  left:50%;
-  width:14px;
-  height:14px;
+  width:14px;height:14px;
   border:2px solid #000080;
   border-radius:50%;
+  top:50%;left:50%;
   transform:translate(-50%,-50%);
 }
 
@@ -247,38 +201,38 @@ body.light .btn:hover{
 .usa::before{
   content:"";
   position:absolute;
-  width:50%;
-  height:50%;
+  width:50%;height:50%;
   background:#3c3b6e;
 }
 
 /* BANGLADESH */
-.bangladesh{
-  background:#006a4e;
-}
+.bangladesh{background:#006a4e}
 .bangladesh::after{
   content:"";
   position:absolute;
-  top:50%;
-  left:45%;
-  width:22px;
-  height:22px;
+  width:22px;height:22px;
   background:#f42a41;
   border-radius:50%;
+  top:50%;left:45%;
   transform:translate(-50%,-50%);
 }
 
 /* FOOTER */
-.footer{
-  margin-top:30px;
-  text-align:center;
-}
+.footer{text-align:center;margin-top:30px}
+
 .footer-box{
   display:inline-block;
-  padding:12px 25px;
+  padding:15px 30px;
   border-radius:30px;
   background:linear-gradient(90deg,#ff4ecb,#7b5cff);
   box-shadow:0 0 20px #ff4ecb;
+  line-height:1.8;
+  font-weight:600;
+}
+
+.whatsapp{
+  color:#25D366;
+  margin-right:8px;
 }
 
 </style>
@@ -302,7 +256,7 @@ body.light .btn:hover{
 
 <div class="hero">
 
-<div class="glass" style="position:relative; max-width:600px; width:100%;">
+<div class="glass" style="max-width:600px;width:100%;">
 
 <div class="mascot">
 <img src="mascot.png" id="cat">
@@ -337,7 +291,10 @@ body.light .btn:hover{
 </div>
 
 <div class="footer">
-<div class="footer-box">📞 +91 9286766608</div>
+<div class="footer-box">
+<span class="whatsapp">💬</span> +91 9286766608 <br>
+<span class="whatsapp">💬</span> +1 (825) 782-8116
+</div>
 </div>
 
 </div>
@@ -349,16 +306,6 @@ document.addEventListener('mousemove',(e)=>{
 let x=(window.innerWidth/2-e.pageX)/40;
 let y=(window.innerHeight/2-e.pageY)/40;
 cat.style.transform=`translate(${x}px,${y}px)`;
-});
-
-// 🍏 PARALLAX SMOOTH EFFECT
-document.addEventListener('mousemove',(e)=>{
-let moveX=(e.clientX/window.innerWidth - 0.5)*10;
-let moveY=(e.clientY/window.innerHeight - 0.5)*10;
-
-document.querySelectorAll('.glass').forEach(el=>{
-  el.style.transform=`translate(${moveX}px, ${moveY}px)`;
-});
 });
 </script>
 
