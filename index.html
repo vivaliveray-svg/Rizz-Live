@@ -329,3 +329,51 @@ function openRizz(){
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rizz Live Officials</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#050014;
+  color:#fff;
+}
+
+.card{
+  margin:15px;
+  padding:20px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.05);
+  box-shadow:0 0 20px #ff00cc;
+  cursor:pointer;
+}
+
+.card:hover{
+  transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" onclick="openProfile(2345)">Test 1 - 2345</div>
+<div class="card" onclick="openProfile(2346)">Test 2 - 2346</div>
+<div class="card" onclick="openProfile(2347)">Test 3 - 2347</div>
+<div class="card" onclick="openProfile(2348)">Test 4 - 2348</div>
+<div class="card" onclick="openProfile(2349)">Test 5 - 2349</div>
+
+<script>
+function openProfile(id){
+  window.location="vivamylife://user/"+id;
+}
+</script>
+
+</body>
+</html>
