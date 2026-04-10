@@ -8,7 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 body{
   font-family:'Poppins',sans-serif;
@@ -17,15 +20,14 @@ body{
   transition:.4s;
 }
 
-/* ☀️ LIGHT MODE FIX */
+/* LIGHT MODE */
 body.light{
   background:#f5f5ff;
   color:#111;
 }
 body.light .title,
 body.light .hiring,
-body.light .positions li,
-body.light .footer{
+body.light .positions li{
   color:#111;
   -webkit-text-fill-color:unset;
 }
@@ -76,16 +78,37 @@ body::before{
   backdrop-filter:blur(25px);
   border-radius:20px;
   padding:25px;
+  position:relative;
+  overflow:hidden;
+  animation:glassFloat 6s ease-in-out infinite;
+}
+@keyframes glassFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
+
+/* GLASS SHINE */
+.glass::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+  animation:shine 4s infinite;
+}
+@keyframes shine{
+  100%{left:120%}
 }
 
 .hero{
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
-  gap:25px;
+  display:flex;
+  justify-content:center;
   margin-top:30px;
 }
 
-/* 🐱 MASCOT */
+/* MASCOT */
 .mascot{
   position:absolute;
   top:-25px;
@@ -94,10 +117,7 @@ body::before{
 .mascot img{
   width:70px;
   animation:blink 4s infinite;
-  transform-origin:center;
 }
-
-/* 👀 BLINK */
 @keyframes blink{
   0%,92%,100%{transform:scaleY(1)}
   95%{transform:scaleY(0.1)}
@@ -123,79 +143,129 @@ body::before{
 /* LIST */
 .positions li{list-style:none;margin:6px 0}
 
-/* BUTTONS */
+/* BUTTON GRID */
 .policy-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:10px;
+  gap:12px;
   margin-top:15px;
 }
 
-/* BASE */
+/* BUTTON */
 .policy-btn,.btn{
   text-decoration:none;
   color:#fff;
   text-align:center;
-  padding:10px;
+  padding:12px;
   border-radius:25px;
   background:linear-gradient(135deg,#ff4ecb,#7b5cff);
-  box-shadow:0 0 15px #ff4ecb;
-  transition:.3s;
+  box-shadow:0 6px 0 rgba(0,0,0,0.4),0 0 15px #ff4ecb;
+  transition:all .4s cubic-bezier(0.22,1,0.36,1);
 }
 
-/* 🌙 DARK → LIGHT HOVER */
+/* HOVER SWITCH */
 body:not(.light) .policy-btn:hover,
 body:not(.light) .btn:hover{
   background:#fff;
   color:#000;
-  transform:scale(1.05);
-  box-shadow:0 0 25px #fff;
+  transform:translateY(-2px) scale(1.02);
 }
-
-/* ☀️ LIGHT → DARK HOVER */
 body.light .policy-btn:hover,
 body.light .btn:hover{
   background:#000;
   color:#fff;
-  transform:scale(1.05);
-  box-shadow:0 0 25px #000;
 }
 
-/* SPECIAL */
+/* 3D CLICK */
+.policy-btn:active,.btn:active{
+  transform:translateY(5px);
+  box-shadow:0 2px 0 rgba(0,0,0,0.5);
+}
+
 .special{
   background:linear-gradient(135deg,#00c6ff,#0072ff);
 }
-body:not(.light) .special:hover{
-  background:#fff;
-  color:#0072ff;
-}
-body.light .special:hover{
-  background:#000;
-  color:#00c6ff;
-}
-
-/* APPLY */
-.btn{
-  display:inline-block;
-  margin-top:30px;
-}
 
 /* FLAGS */
-.right{
+.flags{
   display:flex;
   justify-content:center;
-  gap:15px;
+  gap:20px;
+  margin-top:25px;
 }
+
 .flag{
   width:65px;
   height:65px;
   border-radius:50%;
   overflow:hidden;
+  position:relative;
+  transition:.4s;
 }
-.flag img{
+
+/* FLAG HOVER */
+.flag::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
   width:100%;
   height:100%;
-  object-fit:cover;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
+}
+.flag:hover{
+  transform:rotate(8deg) scale(1.1);
+  box-shadow:0 0 20px #fff;
+}
+.flag:hover::before{
+  animation:flagShine .6s forwards;
+}
+@keyframes flagShine{
+  to{left:120%}
+}
+
+/* INDIA */
+.india{
+  background:linear-gradient(#ff9933 33%, #fff 33% 66%, #138808 66%);
+}
+.india::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:14px;
+  height:14px;
+  border:2px solid #000080;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+}
+
+/* USA */
+.usa{
+  background:repeating-linear-gradient(to bottom,#b22234 0 5px,#fff 5px 10px);
+}
+.usa::before{
+  content:"";
+  position:absolute;
+  width:50%;
+  height:50%;
+  background:#3c3b6e;
+}
+
+/* BANGLADESH */
+.bangladesh{
+  background:#006a4e;
+}
+.bangladesh::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:45%;
+  width:22px;
+  height:22px;
+  background:#f42a41;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
 }
 
 /* FOOTER */
@@ -203,12 +273,14 @@ body.light .special:hover{
   margin-top:30px;
   text-align:center;
 }
-
-/* MOBILE */
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr}
-  .mascot{position:static;text-align:center;margin-bottom:10px}
+.footer-box{
+  display:inline-block;
+  padding:12px 25px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#ff4ecb,#7b5cff);
+  box-shadow:0 0 20px #ff4ecb;
 }
+
 </style>
 </head>
 
@@ -225,74 +297,68 @@ body.light .special:hover{
     </div>
   </div>
 
-  <div class="toggle" onclick="document.body.classList.toggle('light')">
-    🌙/☀️
-  </div>
+  <div class="toggle" onclick="document.body.classList.toggle('light')">🌙/☀️</div>
 </div>
 
 <div class="hero">
 
-<div class="glass" style="position:relative;">
+<div class="glass" style="position:relative; max-width:600px; width:100%;">
 
-  <div class="mascot">
-    <img src="mascot.png" id="cat">
-  </div>
-
-  <div class="tag">We’re</div>
-  <div class="hiring">HIRING</div>
-
-  <ul class="positions">
-    <li>✔ BDM/ADMIN</li>
-    <li>✔ Agency</li>
-    <li>✔ Coin Seller</li>
-    <li>✔ Business Partner</li>
-  </ul>
-
-  <div class="policy-grid">
-    <a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/MCoHw2omBiOEOjkCzD6jSgC0pJd" class="policy-btn">Agency Policy</a>
-    <a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/LAqjwlaUnigRWpkLaRMjYNxupTf" class="policy-btn">Host Policy</a>
-    <a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/U9kcwpf6hikFvTk5KeDjQoAfpFe" class="policy-btn">Star Host Policy</a>
-    <a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/KJVqw9sbViB4yHkj3S6jYCTBpWb" class="policy-btn">Seller Policy</a>
-
-    <a href="https://xjpumno595ok.jp.larksuite.com/share/base/form/shrjppqqLKpgmUaHsmQc5JWA8Ge" class="policy-btn special">Agency Registration</a>
-  </div>
-
-  <a href="mailto:hr.vivalive@proton.me" class="btn">APPLY NOW</a>
-
+<div class="mascot">
+<img src="mascot.png" id="cat">
 </div>
 
-<div class="right">
-  <div class="glass flag"><img src="usa.png"></div>
-  <div class="glass flag"><img src="india.png"></div>
-  <div class="glass flag"><img src="bangladesh.png"></div>
+<div class="tag">We’re</div>
+<div class="hiring">HIRING</div>
+
+<ul class="positions">
+<li>✔ BDM/ADMIN</li>
+<li>✔ Agency</li>
+<li>✔ Coin Seller</li>
+<li>✔ Business Partner</li>
+</ul>
+
+<div class="policy-grid">
+<a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/MCoHw2omBiOEOjkCzD6jSgC0pJd" class="policy-btn">Agency Policy</a>
+<a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/LAqjwlaUnigRWpkLaRMjYNxupTf" class="policy-btn">Host Policy</a>
+<a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/U9kcwpf6hikFvTk5KeDjQoAfpFe" class="policy-btn">Star Host Policy</a>
+<a href="https://hjpu179v3tzg.jp.larksuite.com/wiki/KJVqw9sbViB4yHkj3S6jYCTBpWb" class="policy-btn">Seller Policy</a>
+<a href="https://xjpumno595ok.jp.larksuite.com/share/base/form/shrjppqqLKpgmUaHsmQc5JWA8Ge" class="policy-btn special">Agency Registration</a>
+</div>
+
+<div class="flags">
+<div class="flag india"></div>
+<div class="flag usa"></div>
+<div class="flag bangladesh"></div>
+</div>
+
 </div>
 
 </div>
 
 <div class="footer">
-  More information: +91 9286766608
+<div class="footer-box">📞 +91 9286766608</div>
 </div>
 
 </div>
 
 <script>
-// 🐱 Eyes follow cursor
-const cat = document.getElementById('cat');
-document.addEventListener('mousemove', (e)=>{
-  let x = (window.innerWidth/2 - e.pageX)/40;
-  let y = (window.innerHeight/2 - e.pageY)/40;
-  cat.style.transform = `translate(${x}px, ${y}px)`;
+// MASCOT MOVE
+const cat=document.getElementById('cat');
+document.addEventListener('mousemove',(e)=>{
+let x=(window.innerWidth/2-e.pageX)/40;
+let y=(window.innerHeight/2-e.pageY)/40;
+cat.style.transform=`translate(${x}px,${y}px)`;
 });
 
-// 🔊 Sound + 📳 Vibration
-document.querySelectorAll('a').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    let audio = new Audio("https://www.soundjay.com/buttons/sounds/button-16.mp3");
-    audio.play();
-    if(navigator.vibrate){
-      navigator.vibrate(50);
-    }
-  });
+// 🍏 PARALLAX SMOOTH EFFECT
+document.addEventListener('mousemove',(e)=>{
+let moveX=(e.clientX/window.innerWidth - 0.5)*10;
+let moveY=(e.clientY/window.innerHeight - 0.5)*10;
+
+document.querySelectorAll('.glass').forEach(el=>{
+  el.style.transform=`translate(${moveX}px, ${moveY}px)`;
+});
 });
 </script>
 
