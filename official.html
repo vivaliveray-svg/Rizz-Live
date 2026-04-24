@@ -1,3 +1,4 @@
+<!-- official.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,7 +87,7 @@ body::before{
   overflow:hidden;
 }
 
-/* Shine effect */
+/* Shine Effect */
 .card::before{
   content:"";
   position:absolute;
@@ -120,7 +121,7 @@ body::before{
 
 .id{
   font-size:14px;
-  opacity:.7;
+  opacity:.75;
 }
 
 /* BACK BUTTON */
@@ -140,28 +141,32 @@ body::before{
 
 <div class="toggle" onclick="toggleMode()">🌙 / ☀️</div>
 
-<div class="header">🔥 RIZZ LIVE OFFICIALS</div>
+<div class="header">
+  🔥 RIZZ LIVE OFFICIALS
+</div>
 
 <div class="container">
 
-<!-- MAIN OFFICIAL -->
-<div class="card" onclick="openMain()">
-  <div class="name">🔥 Ray-IN</div>
-  <div class="id">Rizz ID: 1002</div>
-</div>
+  <!-- MAIN OFFICIAL -->
+  <div class="card" onclick="openMain()">
+    <div class="name">🔥 Ray-IN</div>
+    <div class="id">Rizz ID: 1002</div>
+  </div>
 
-<!-- TEST USER -->
-<div class="card" onclick="openProfile(2346)">
-  <div class="name">Khushdeep-IN</div>
-  <div class="id">Rizz ID: 1010</div>
-</div>
+  <!-- SECOND USER -->
+  <div class="card" onclick="openProfile(1010)">
+    <div class="name">Khushdeep-IN</div>
+    <div class="id">Rizz ID: 1010</div>
+  </div>
 
-<a href="index.html" class="back">⬅ Back</a>
+  <a href="index.html" class="back">
+    ⬅ Back
+  </a>
 
 </div>
 
 <script>
-/* LIGHT / DARK MODE FIX */
+/* LIGHT / DARK MODE */
 function toggleMode(){
   document.body.classList.toggle("light");
 }
@@ -172,7 +177,7 @@ function openMain(){
   "https://p.vivamylife.com/page/app/download.html?type=room&cno=1002&code=AAHSIE";
 }
 
-/* TEST PROFILE */
+/* SECOND PROFILE */
 function openProfile(id){
   alert("Profile ID: " + id);
 }
