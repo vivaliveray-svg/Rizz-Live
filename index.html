@@ -1,3 +1,4 @@
+```html
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +21,7 @@ body{
   background:#050014;
   color:#fff;
   transition:0.4s;
+  min-height:100vh;
 }
 
 /* LIGHT MODE */
@@ -35,13 +37,19 @@ body.light .positions li{
   -webkit-text-fill-color:unset;
 }
 
-/* BACKGROUND */
+/* ANIMATED BG */
 body::before{
   content:"";
   position:fixed;
   width:300%;
   height:300%;
-  background:linear-gradient(45deg,#ff00cc,#3333ff,#00ffe1,#ff00cc);
+  background:linear-gradient(
+    45deg,
+    #ff00cc,
+    #3333ff,
+    #00ffe1,
+    #ff00cc
+  );
   animation:bgMove 12s linear infinite;
   z-index:-1;
   opacity:.15;
@@ -64,6 +72,7 @@ body::before{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:20px;
 }
 
 .leftHead{
@@ -74,11 +83,13 @@ body::before{
 
 .logo img{
   width:55px;
+  height:55px;
   border-radius:50%;
+  object-fit:cover;
 }
 
 .title{
-  font-size:26px;
+  font-size:28px;
   font-weight:800;
   background:linear-gradient(90deg,#ff4ecb,#7b5cff);
   -webkit-background-clip:text;
@@ -97,23 +108,24 @@ body::before{
   background:linear-gradient(90deg,#ff4ecb,#7b5cff);
   color:#fff;
   font-weight:600;
+  user-select:none;
 }
 
 /* HERO */
 .hero{
   display:flex;
   justify-content:center;
-  margin-top:30px;
+  margin-top:35px;
 }
 
 /* GLASS CARD */
 .glass{
   width:100%;
-  max-width:650px;
+  max-width:700px;
   background:rgba(255,255,255,0.05);
   backdrop-filter:blur(25px);
-  border-radius:24px;
-  padding:30px;
+  border-radius:25px;
+  padding:35px;
   position:relative;
   overflow:hidden;
   box-shadow:0 0 20px rgba(255,0,200,.25);
@@ -140,7 +152,13 @@ body::before{
 .hiring{
   font-size:60px;
   margin:12px 0;
-  background:linear-gradient(90deg,#fff,#ff9ae6,#a18cff,#fff);
+  background:linear-gradient(
+    90deg,
+    #ffffff,
+    #ff9ae6,
+    #a18cff,
+    #ffffff
+  );
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
@@ -160,17 +178,28 @@ body::before{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:12px;
-  margin-top:20px;
+  margin-top:22px;
 }
 
 .policy-btn{
   text-decoration:none;
   color:#fff;
   text-align:center;
-  padding:10px;
+  padding:12px;
   font-size:14px;
   border-radius:25px;
   background:linear-gradient(135deg,#ff4ecb,#7b5cff);
+  transition:.3s;
+  display:block;
+}
+
+.policy-btn:hover{
+  transform:scale(1.02);
+}
+
+.full-btn{
+  width:100%;
+  margin-top:12px;
 }
 
 .special{
@@ -179,7 +208,7 @@ body::before{
 
 /* FOOTER */
 .footer{
-  margin-top:35px;
+  margin-top:40px;
   text-align:center;
 }
 
@@ -210,7 +239,14 @@ body::before{
   text-decoration:none;
 }
 
+/* MOBILE */
 @media(max-width:768px){
+
+  .header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
   .hiring{
     font-size:42px;
   }
@@ -219,9 +255,12 @@ body::before{
     grid-template-columns:1fr;
   }
 
-  .header{
-    flex-direction:column;
-    gap:15px;
+  .glass{
+    padding:25px;
+  }
+
+  .mascot img{
+    width:60px;
   }
 }
 </style>
@@ -230,70 +269,103 @@ body::before{
 
 <div class="container">
 
-<div class="header">
-  <div class="leftHead">
-    <div class="logo">
-      <img src="logo.png" alt="logo">
-    </div>
+  <!-- HEADER -->
+  <div class="header">
 
-    <div>
-      <div class="title">RIZZ LIVE</div>
-      <div class="subtitle">
-        INDIA, BANGLADESH, USA, NIGERIA, LATIN AMERICA
+    <div class="leftHead">
+
+      <div class="logo">
+        <img src="logo.png" alt="logo">
       </div>
+
+      <div>
+        <div class="title">RIZZ LIVE</div>
+        <div class="subtitle">
+          INDIA, BANGLADESH, USA, NIGERIA, LATIN AMERICA
+        </div>
+      </div>
+
+    </div>
+
+    <div class="toggle" onclick="toggleMode()">🌙 / ☀️</div>
+
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+
+    <div class="glass">
+
+      <div class="mascot">
+        <img src="mascot.png" id="cat" alt="mascot">
+      </div>
+
+      <div class="tag">We’re</div>
+      <div class="hiring">HIRING</div>
+
+      <ul class="positions">
+        <li>✔ BDM / ADMIN</li>
+        <li>✔ Agency</li>
+        <li>✔ Host</li>
+        <li>✔ Coin Seller</li>
+        <li>✔ Business Partner</li>
+      </ul>
+
+      <!-- TOP ROW = 1 + 1 -->
+      <div class="policy-grid">
+
+        <a href="https://xjpumno595ok.jp.larksuite.com/wiki/Hz0IwZORGifT8SkWbRRj2KXup0c"
+           class="policy-btn">
+          Agency Policy
+        </a>
+
+        <a href="https://xjpumno595ok.jp.larksuite.com/wiki/TdaxwQ724ireXTkTyeijOhgkpAe"
+           class="policy-btn">
+          Host Policy
+        </a>
+
+      </div>
+
+      <!-- SECOND ROW -->
+      <a href="https://xjpumno595ok.jp.larksuite.com/wiki/N2N9waEDyiU70tkBMBHjj5PSpre"
+         class="policy-btn full-btn">
+        Seller Policy
+      </a>
+
+      <!-- THIRD ROW -->
+      <a href="https://xjpumno595ok.jp.larksuite.com/share/base/form/shrjpFlhYbFWamZeMgWobW4bMye"
+         class="policy-btn full-btn special">
+        Agency Registration
+      </a>
+
     </div>
   </div>
 
-  <div class="toggle" onclick="toggleMode()">🌙 / ☀️</div>
-</div>
+  <!-- FOOTER -->
+  <div class="footer">
 
-<div class="hero">
-  <div class="glass">
+    <!-- OFFICIAL BOX -->
+    <div class="box official-box">
+      <div>🚀 RIZZ LIVE OFFICIAL</div>
 
-    <div class="mascot">
-      <img src="mascot.png" id="cat" alt="mascot">
+      <a href="official.html" class="footer-btn">
+        View Official List
+      </a>
     </div>
 
-    <div class="tag">We’re</div>
-    <div class="hiring">HIRING</div>
+    <br>
 
-    <ul class="positions">
-      <li>✔ BDM / ADMIN</li>
-      <li>✔ Agency</li>
-      <li>✔ Host</li>
-      <li>✔ Coin Seller</li>
-      <li>✔ Business Partner</li>
-    </ul>
+    <!-- WHATSAPP BOX -->
+    <div class="box whatsapp-box">
+      <div>💬 Official WhatsApp Channel</div>
 
-    <div class="policy-grid">
-      <a href="#" class="policy-btn">Agency Policy</a>
-      <a href="#" class="policy-btn">Host Policy</a>
-      <a href="#" class="policy-btn">Seller Policy</a>
-      <a href="#" class="policy-btn special">Agency Registration</a>
+      <a href="https://whatsapp.com/channel/0029VbBsWwtGzzKJmjQ8CU0Q"
+         class="footer-btn">
+        Join Now 🚀
+      </a>
     </div>
 
   </div>
-</div>
-
-<div class="footer">
-
-  <div class="box official-box">
-    <div>🚀 RIZZ LIVE OFFICIAL</div>
-    <a href="official.html" class="footer-btn">
-      View Official List
-    </a>
-  </div>
-
-  <br>
-
-  <div class="box whatsapp-box">
-    <div>💬 Official WhatsApp Channel</div>
-    <a href="#" class="footer-btn">
-      Join Now 🚀
-    </a>
-  </div>
-
-</div>
 
 </div>
 
@@ -306,8 +378,8 @@ const cat = document.getElementById("cat");
 
 if(cat && window.innerWidth > 768){
   document.addEventListener("mousemove", function(e){
-    let x = (window.innerWidth/2 - e.pageX)/40;
-    let y = (window.innerHeight/2 - e.pageY)/40;
+    let x = (window.innerWidth / 2 - e.pageX) / 40;
+    let y = (window.innerHeight / 2 - e.pageY) / 40;
     cat.style.transform = `translate(${x}px, ${y}px)`;
   });
 }
@@ -315,3 +387,4 @@ if(cat && window.innerWidth > 768){
 
 </body>
 </html>
+```
