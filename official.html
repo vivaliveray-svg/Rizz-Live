@@ -33,8 +33,11 @@ body::before{
   z-index:-1;
   opacity:.12;
 }
+
 @keyframes bgMove{
-  100%{transform:translate(-50%,-50%)}
+  100%{
+    transform:translate(-50%,-50%);
+  }
 }
 
 /* HEADER */
@@ -48,15 +51,18 @@ body::before{
   -webkit-text-fill-color:transparent;
 }
 
-/* TOGGLE */
+/* TOGGLE BUTTON */
 .toggle{
   position:fixed;
   top:15px;
   right:15px;
   cursor:pointer;
-  padding:8px 14px;
+  padding:10px 16px;
   border-radius:20px;
   background:linear-gradient(90deg,#ff4ecb,#7b5cff);
+  color:#fff;
+  font-weight:600;
+  z-index:999;
 }
 
 /* CONTAINER */
@@ -88,7 +94,12 @@ body::before{
   left:-100%;
   width:100%;
   height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.6),
+    transparent
+  );
   transition:.6s;
 }
 
@@ -127,44 +138,43 @@ body::before{
 
 <body>
 
-<div class="toggle" onclick="toggleMode()">🌙/☀️</div>
+<div class="toggle" onclick="toggleMode()">🌙 / ☀️</div>
 
 <div class="header">🔥 RIZZ LIVE OFFICIALS</div>
 
 <div class="container">
 
-<!-- 🔥 MAIN OFFICIAL -->
+<!-- MAIN OFFICIAL -->
 <div class="card" onclick="openMain()">
   <div class="name">🔥 Ray-IN</div>
   <div class="id">Rizz ID: 1002</div>
 </div>
 
-<!-- TEST USERS -->
+<!-- TEST USER -->
 <div class="card" onclick="openProfile(2346)">
   <div class="name">Khushdeep-IN</div>
-  <div class="id">Rizz ID: 1010 </div>
+  <div class="id">Rizz ID: 1010</div>
 </div>
-
 
 <a href="index.html" class="back">⬅ Back</a>
 
 </div>
 
 <script>
+/* LIGHT / DARK MODE FIX */
 function toggleMode(){
   document.body.classList.toggle("light");
 }
 
-// 🔥 YOUR SPECIAL LINK
+/* MAIN LINK */
 function openMain(){
-  window.location = "https://p.vivamylife.com/page/app/download.html?type=room&cno=1002&code=AAHSIE";
+  window.location.href =
+  "https://p.vivamylife.com/page/app/download.html?type=room&cno=1002&code=AAHSIE";
 }
 
-
-
-  setTimeout(function(){
-    window.location = "https://p.vivamylife.com/page/app/download.html";
-  },1);
+/* TEST PROFILE */
+function openProfile(id){
+  alert("Profile ID: " + id);
 }
 </script>
 
