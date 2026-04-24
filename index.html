@@ -35,13 +35,19 @@ body.light .positions li{
   -webkit-text-fill-color:unset;
 }
 
-/* BG */
+/* BACKGROUND */
 body::before{
   content:"";
   position:fixed;
   width:300%;
   height:300%;
-  background:linear-gradient(45deg,#ff00cc,#3333ff,#00ffe1,#ff00cc);
+  background:linear-gradient(
+    45deg,
+    #ff00cc,
+    #3333ff,
+    #00ffe1,
+    #ff00cc
+  );
   animation:bgMove 12s linear infinite;
   z-index:-1;
   opacity:.15;
@@ -87,7 +93,7 @@ body::before{
 
 .subtitle{
   font-size:11px;
-  opacity:.7;
+  opacity:.75;
 }
 
 .toggle{
@@ -95,16 +101,7 @@ body::before{
   padding:8px 14px;
   border-radius:20px;
   background:linear-gradient(90deg,#ff4ecb,#7b5cff);
-}
-
-/* GLASS */
-.glass{
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(25px);
-  border-radius:20px;
-  padding:25px;
-  position:relative;
-  overflow:hidden;
+  color:#fff;
 }
 
 /* HERO */
@@ -114,11 +111,23 @@ body::before{
   margin-top:30px;
 }
 
+/* GLASS CARD */
+.glass{
+  width:100%;
+  max-width:650px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(25px);
+  border-radius:20px;
+  padding:25px;
+  position:relative;
+  overflow:hidden;
+}
+
 /* MASCOT */
 .mascot{
   position:absolute;
-  top:-10px;
-  right:40px;
+  top:-5px;
+  right:10px;
 }
 
 .mascot img{
@@ -136,7 +145,13 @@ body::before{
 .hiring{
   font-size:60px;
   margin:10px 0;
-  background:linear-gradient(90deg,#fff,#ff9ae6,#a18cff,#fff);
+  background:linear-gradient(
+    90deg,
+    #fff,
+    #ff9ae6,
+    #a18cff,
+    #fff
+  );
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
@@ -166,8 +181,8 @@ body::before{
 }
 
 .full-btn{
-  margin-top:12px;
   width:100%;
+  margin-top:12px;
 }
 
 .special{
@@ -192,7 +207,11 @@ body::before{
 
 /* INDIA FLAG */
 .india{
-  background:linear-gradient(#ff9933 33%, #fff 33% 66%, #138808 66%);
+  background:linear-gradient(
+    #ff9933 33%,
+    #ffffff 33% 66%,
+    #138808 66%
+  );
   display:flex;
   align-items:center;
   justify-content:center;
@@ -208,7 +227,7 @@ body::before{
   background:repeating-linear-gradient(
     to bottom,
     #b22234 0 5px,
-    #fff 5px 10px
+    #ffffff 5px 10px
   );
 }
 
@@ -279,11 +298,6 @@ body::before{
   .hiring{
     font-size:42px;
   }
-
-  body::before{
-    animation:none;
-    opacity:.08;
-  }
 }
 </style>
 </head>
@@ -315,7 +329,7 @@ body::before{
 <!-- HERO -->
 <div class="hero">
 
-<div class="glass" style="max-width:650px;width:100%;">
+<div class="glass">
 
   <div class="mascot">
     <img src="mascot.png" id="cat" alt="mascot">
@@ -337,12 +351,12 @@ body::before{
 
     <a href="https://xjpumno595ok.jp.larksuite.com/wiki/Hz0IwZORGifT8SkWbRRj2KXup0c"
        class="policy-btn">
-       Agency Policy
+      Agency Policy
     </a>
 
     <a href="https://xjpumno595ok.jp.larksuite.com/wiki/TdaxwQ724ireXTkTyeijOhgkpAe"
        class="policy-btn">
-       Host Policy
+      Host Policy
     </a>
 
   </div>
@@ -350,22 +364,33 @@ body::before{
   <!-- Row 2 -->
   <a href="https://xjpumno595ok.jp.larksuite.com/wiki/N2N9waEDyiU70tkBMBHjj5PSpre"
      class="policy-btn full-btn">
-     Seller Policy
+    Seller Policy
   </a>
 
   <!-- Row 3 -->
   <a href="https://xjpumno595ok.jp.larksuite.com/share/base/form/shrjpFlhYbFWamZeMgWobW4bMye"
      class="policy-btn full-btn special">
-     Agency Registration
+    Agency Registration
   </a>
 
   <!-- FLAGS -->
   <div class="flags">
 
+    <!-- INDIA -->
     <div class="flag india">
       <svg viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="45" stroke="#000080" stroke-width="3" fill="none"/>
+
+        <circle
+          cx="50"
+          cy="50"
+          r="45"
+          stroke="#000080"
+          stroke-width="3"
+          fill="none"
+        />
+
         <g stroke="#000080" stroke-width="2">
+
           <line x1="50" y1="50" x2="50" y2="5"/>
           <line x1="50" y1="50" x2="50" y2="5" transform="rotate(15 50 50)"/>
           <line x1="50" y1="50" x2="50" y2="5" transform="rotate(30 50 50)"/>
@@ -373,29 +398,33 @@ body::before{
           <line x1="50" y1="50" x2="50" y2="5" transform="rotate(60 50 50)"/>
           <line x1="50" y1="50" x2="50" y2="5" transform="rotate(75 50 50)"/>
           <line x1="50" y1="50" x2="50" y2="5" transform="rotate(90 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(15 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(30 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(45 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(60 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(75 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(90 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(15 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(30 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(45 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(60 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(75 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(90 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(15 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(30 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(45 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(60 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(75 50 50)"/>
-          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(90 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(105 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(120 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(135 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(150 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(165 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(180 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(195 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(210 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(225 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(240 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(255 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(270 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(285 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(300 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(315 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(330 50 50)"/>
+          <line x1="50" y1="50" x2="50" y2="5" transform="rotate(345 50 50)"/>
+
         </g>
+
       </svg>
     </div>
 
+    <!-- USA -->
     <div class="flag usa"></div>
+
+    <!-- BANGLADESH -->
     <div class="flag bangladesh"></div>
 
   </div>
@@ -421,7 +450,7 @@ body::before{
 
     <a href="https://whatsapp.com/channel/0029VbBsWwtGzzKJmjQ8CU0Q"
        class="footer-btn">
-       Join Now 🚀
+      Join Now 🚀
     </a>
   </div>
 
@@ -437,10 +466,10 @@ function toggleMode(){
 const cat = document.getElementById("cat");
 
 if(cat && window.innerWidth > 768){
-  document.addEventListener("mousemove",(e)=>{
-    let x = (window.innerWidth/2 - e.pageX)/40;
-    let y = (window.innerHeight/2 - e.pageY)/40;
-    cat.style.transform = `translate(${x}px,${y}px)`;
+  document.addEventListener("mousemove", function(e){
+    let x = (window.innerWidth / 2 - e.pageX) / 40;
+    let y = (window.innerHeight / 2 - e.pageY) / 40;
+    cat.style.transform = `translate(${x}px, ${y}px)`;
   });
 }
 </script>
